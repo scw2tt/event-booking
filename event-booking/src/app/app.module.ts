@@ -1,18 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { AngularMaterialModule } from './angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { ContentItemComponent } from './components/content-item/content-item.component';
+import { AboutComponent } from './components/about/about.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { MyRequestsComponent } from './components/my-requests/my-requests.component';
+import { MyCalendarComponent } from './components/my-calendar/my-calendar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    ProfileComponent,
+    MenuItemComponent,
+    ContentItemComponent,
+    AboutComponent,
+    ArchiveComponent,
+    MyRequestsComponent,
+    MyCalendarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, AngularMaterialModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+.title{
+    color: white;
+}
+
+.tagline{
+    color: white;
+}
+
+.hero{ 
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/assets/images/concert-background.jpeg') !important;
+}
+
+.main-container{
+    padding-left: 5%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
