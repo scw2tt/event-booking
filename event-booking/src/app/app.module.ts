@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
-import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -40,16 +37,9 @@ import { MyCalendarComponent } from './components/my-calendar/my-calendar.compon
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    CommonModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    })
-    ,
   ],
   providers: [],
   bootstrap: [AppComponent, AngularMaterialModule],
-  exports: [MyCalendarComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
