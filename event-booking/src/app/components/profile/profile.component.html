@@ -11,7 +11,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+        function show_hide(show, hide) {
+            document.getElementById(show).style.display = "block";
+            document.getElementById(hide).style.display = "none";
+        }
+    </script>
 
+    <link href="https://unpkg.com/bootstrap-css-only@4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://unpkg.com/angular-calendar@0.28.5/css/angular-calendar.css" rel="stylesheet">
+    <link href="https://unpkg.com/flatpickr@4.6.3/dist/flatpickr.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +33,7 @@
                 <!--profile picture-->
                 <img src="assets/images/sample-account/profile.jpg" class="profile-pic" alt="">
                 <!--Name-->
-                <h2 class="performer-name">Johnny Cash</h2>
+                <h1 class="performer-name">Johnny Cash</h1>
 
                 <!--Performer's Info-->
                 <div class="performer-info">
@@ -45,11 +55,15 @@
                         <app-about></app-about>
                     </mat-tab>
 
-                    <mat-tab label="Calendar">2</mat-tab>
+                    <mat-tab label="Calendar">
+                        Not Implemented for this Assignment...
+                    </mat-tab>
 
-                    <mat-tab label="Requests">3</mat-tab>
+                    <mat-tab label="Requests">
+                        <app-my-requests></app-my-requests>
+                    </mat-tab>
 
-                    <mat-tab label="Archive">4</mat-tab>
+                    <mat-tab label="Archive">Not Implemented for this Assignment...</mat-tab>
 
                 </mat-tab-group>
 
