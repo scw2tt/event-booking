@@ -1,4 +1,4 @@
-input {
+input, textarea {
   width: 100%;
   padding: 12px;
 }
@@ -9,14 +9,21 @@ label {
 }
 
 h1 {
-  color: lightgray;
+  color: white;
+}
+
+.back {
+  padding: 25px;
+  background-image: url('/assets/images/crowd.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contain {
   background-color: #9861F3;
   padding: 20px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -37,7 +44,7 @@ button
 }
 
 @media screen and (max-width: 650px) {
-  .leftcol, .rightcol {
+  .leftcol, .rightcol, textarea {
     width: 100%;
     margin-top: 0;
   }
