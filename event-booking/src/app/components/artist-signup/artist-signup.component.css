@@ -1,0 +1,52 @@
+input {
+  width: 100%;
+  padding: 12px;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  color: white;
+}
+
+h1 {
+  color: lightgray;
+}
+
+.contain {
+  background-color: #9861F3;
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button
+{
+  margin-top: 10px;
+  width: 25%;
+}
+
+.leftcol {
+  width: 25%;
+}
+
+.rightcol {
+  width: 75%;
+}
+
+@media screen and (max-width: 650px) {
+  .leftcol, .rightcol {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  button{
+    width: 100%;
+  }
+  .contain {
+    width: 100%;
+  }
+
+}
