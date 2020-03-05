@@ -17,6 +17,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { MyRequestsComponent } from './components/my-requests/my-requests.component';
 import { MyCalendarComponent } from './components/my-calendar/my-calendar.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { ArtistSignupComponent } from './components/artist-signup/artist-signup.component';
+import { VenueSignupComponent } from './components/venue-signup/venue-signup.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { MyCalendarComponent } from './components/my-calendar/my-calendar.compon
     ArchiveComponent,
     MyRequestsComponent,
     MyCalendarComponent,
+    SignupComponent,
+    ArtistSignupComponent,
+    VenueSignupComponent,
   ],
   imports: [
     BrowserModule,
