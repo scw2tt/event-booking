@@ -12,4 +12,10 @@ export class MyRequestsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // add a function here for the show and hide
+  show_hide(show, hide) {
+    document.getElementById(show).style.display = "block";
+    document.getElementById(hide).style.display = "none";
+  }
+
 }

@@ -1,44 +1,12 @@
-<!--function used by the my-requests profile-->
-<script type="text/javascript">
-    function red_expiring(show) {
-        console.log("got to show");
-        var expDates = document.getElementsByClassName('expiring');
-        console.log("expDates length: " + expDates.length);
-        if (expDates.length > 0) {
-            for (var i = 0; i < expDates.length; i++) {
-                var text = expDates[i].textContent;
-                text = text.replace(' Days', '');
-                var numDays = parseInt(text);
-                if (numDays < 4) {
-                    if (expDates[i].style.display == "block") {
-                        expDates[i].style.color = "red";
-                    }
-                } else {
-                    continue;
-                }
-            }
-        }
-    }
-
-    function show_hide(show, hide) {
-        document.getElementById(show).style.display = "block";
-        document.getElementById(hide).style.display = "none";
-
-        // call the one that reds the text if they are close to expiring
-        red_expiring(show);
-    }
-</script>
-
-
 <div id="request-select">
     <!--radio buttons-->
     <div class="radio-btn">
         Filter by:
         <input type="radio" name="reqs" checked="checked" value="requests-to-me"
-            onchange="show_hide('requests-to-me','requests-to-others')" /> Inbox
+            (click)="show_hide('requests-to-me','requests-to-others')" /> Inbox
         <div class="divider"></div>
         <input type="radio" name="reqs" value="requests-to-others"
-            onchange="show_hide('requests-to-others','requests-to-me')" /> Sent
+            (click)="show_hide('requests-to-others','requests-to-me')" /> Sent
     </div>
 
     <!--Inbox-->
