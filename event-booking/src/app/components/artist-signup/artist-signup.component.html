@@ -4,14 +4,14 @@
 
 
 <div class="contain" align="center">
-  <h1>Create an Artist Account</h1>
-  <form>
+  <h1 >Create an Artist Account</h1>
+  <form >
     <div class="row">
       <div class="leftcol">
         <label for="aname" >Artist Name</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="aname" name="artistname" placeholder="Artist Name" autofocus required>
+        <input type="text" id="aname" name="artistname" placeholder="Artist Name" autofocus required />
       </div>
     </div>
 
@@ -20,7 +20,7 @@
         <label for="genre">Genre</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="gebre" name="genre" placeholder="Genre" required>
+        <input type="text" id="genre" name="genre" placeholder="Genre" required />
       </div>
     </div>
 
@@ -29,7 +29,7 @@
         <label for="area">Location</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="area" name="area" placeholder="Location" required>
+        <input type="text" id="area" name="area" placeholder="Location" required />
       </div>
     </div>
 
@@ -39,7 +39,7 @@
         <label for="website">Website</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="website" name="website" placeholder="Website">
+        <input type="text" id="website" name="website" placeholder="Website" />
       </div>
     </div>
 
@@ -48,7 +48,7 @@
         <label for="email">Email</label>
       </div>
       <div class="rightcol">
-        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="email" id="email" name="email" placeholder="Email" required />
       </div>
     </div>
 
@@ -64,21 +64,18 @@
 
     <div class="row">
       <div class="leftcol">
-        <label for="pwd">Password</label>
+        <label for="pwd">Password<br></label>
       </div>
       <div class="rightcol">
-        <input type="text" id="pwd" name="pwd" placeholder="Password" required>
+        <input type="password" id="pwd" name="pwd" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including UPPERCASE, lowercase, and numbers" required />
       </div>
     </div>
-
-
-      <button id="submitbutton" type="button">Sign Up</button>
-
-
+      <button id="submit" type="submit" >Sign Up</button>
   </form>
+
+
+
+
+
 </div>
 </div>
-
-<script type="text/javascript">
-
-</script>

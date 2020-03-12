@@ -12,6 +12,11 @@ h1 {
   color: white;
 }
 
+button:hover
+{
+  border-color: blue;
+  border-radius: 2px;
+}
 .back {
   padding: 25px;
   background-image: url('/assets/images/club.jpg') !important;
