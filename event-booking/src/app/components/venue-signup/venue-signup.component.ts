@@ -1,4 +1,8 @@
+// Emily Mussey & Sean Wolfe
+
 import { Component, OnInit } from '@angular/core';
+
+// Ensures capacity is >= 100 and States how far we are from 100
 
 function checkCap() {
 
@@ -18,6 +22,7 @@ function checkCap() {
 
   }
 
+// Shows state if inside USA
 
 function checkUSA() {
     var country = <HTMLSelectElement>document.getElementById("country");

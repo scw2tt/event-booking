@@ -1,3 +1,5 @@
+/* Emily Mussey & Sean Wolfe */
+
 input, textarea, select {
   width: 100%;
   padding: 12px;
@@ -54,7 +56,7 @@ button
 
 #stateselect {
   display: none;
-   
+
 }
 
 @media screen and (max-width: 650px) {
