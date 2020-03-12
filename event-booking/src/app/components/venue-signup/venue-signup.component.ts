@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 function checkCap() {
 
-    if(document.getElementById('pwd').checkValidity() && document.getElementById('vname').checkValidity() && document.getElementById('cap').checkValidity()
-    && document.getElementById('add1').checkValidity() && document.getElementById('city').checkValidity() && document.getElementById('state').checkValidity()
-  && document.getElementById('zip').checkValidity() && document.getElementById('email').checkValidity())
+    var pass = <HTMLInputElement>document.getElementById('pwd');
+    if(pass.checkValidity() && (<HTMLInputElement>document.getElementById('vname')).checkValidity() && (<HTMLInputElement>document.getElementById('cap')).checkValidity()
+    && (<HTMLInputElement>document.getElementById('add1')).checkValidity() && (<HTMLInputElement>document.getElementById('city')).checkValidity() && (<HTMLInputElement>document.getElementById('state')).checkValidity()
+  && (<HTMLInputElement>document.getElementById('zip')).checkValidity() && (<HTMLInputElement>document.getElementById('email')).checkValidity())
     {
-      var hold = document.getElementById('cap');
-        if(hold.value<100)
+      var hold = (<HTMLInputElement>document.getElementById('cap'));
+        if(Number(hold.value)<100)
         {
           var away = function (a) {return 100 - a};
 
