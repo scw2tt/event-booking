@@ -48,6 +48,15 @@ button
   width: 75%;
 }
 
+#statelabel {
+  display: none;
+}
+
+#stateselect {
+  display: none;
+   
+}
+
 @media screen and (max-width: 650px) {
   .leftcol, .rightcol, textarea, select{
     width: 100%;

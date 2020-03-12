@@ -16,7 +16,25 @@ function checkCap() {
         }
     }
 
-    }
+  }
+
+
+function checkUSA() {
+    var country = <HTMLSelectElement>document.getElementById("country");
+    var state = document.getElementById("statelabel");
+    var state2 = document.getElementById("stateselect");
+
+
+        if (country.value == "US") {
+            state.style.display='inline';
+            state2.style.display='inline';
+        }
+        else
+        {
+            state.style.display='none';
+        }
+  }
+
 
 @Component({
   selector: 'app-venue-signup',
@@ -33,6 +51,10 @@ export class VenueSignupComponent implements OnInit {
   onClick() {
      checkCap();
     }
+
+  myChange() {
+    checkUSA();
+  }
 
 
 }
