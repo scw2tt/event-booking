@@ -35,6 +35,12 @@ button
   width: 25%;
 }
 
+button:hover
+{
+  border-color: blue;
+  border-radius: 2px;
+}
+
 .leftcol {
   width: 25%;
 }

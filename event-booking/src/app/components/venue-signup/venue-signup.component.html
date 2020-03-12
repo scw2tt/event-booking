@@ -1,5 +1,4 @@
 
-
 <div class="back">
 
 
@@ -12,6 +11,15 @@
       </div>
       <div class="rightcol">
         <input type="text" id="vname" name="venuename" placeholder="Venue Name" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="leftcol">
+        <label for="cap" >Capacity</label>
+      </div>
+      <div class="rightcol">
+        <input type="number" id="cap" name="capacity" placeholder="Capacity" required>
       </div>
     </div>
 
@@ -30,7 +38,7 @@
         <label for="add2">Address Line 2</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="add2" name="add2" placeholder="Address Line 2" required>
+        <input type="text" id="add2" name="add2" placeholder="Address Line 2" >
       </div>
     </div>
 
@@ -112,7 +120,7 @@
         <label for="zip">Zipcode</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="zip" name="zip" placeholder="Zipcode" required>
+        <input type="number" id="zip" name="zip" placeholder="Zipcode"  required>
       </div>
     </div>
 
@@ -150,14 +158,10 @@
         <label for="pwd">Password</label>
       </div>
       <div class="rightcol">
-        <input type="text" id="pwd" name="pwd" placeholder="Password" required>
+        <input type="password" id="pwd" name="pwd" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least 8 characters, including UPPERCASE, lowercase, and numbers" required />
       </div>
     </div>
-
-
-      <button id="submitbutton" type="button">Sign Up</button>
-
-
+    <button id="submit" type="submit" (click)="onClick()">Sign Up</button>
   </form>
 </div>
 </div>
