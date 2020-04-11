@@ -1,0 +1,44 @@
+.title{
+    color: white;
+}
+
+.tagline{
+    color: white;
+}
+
+.hero{ 
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('/assets/images/concert-background.jpeg') !important;
+}
+
+.main-container{
+    padding-left: 5%;
+    padding-top: 15%;
+    padding-bottom: 12%;
+}
+
+.flow{
+    padding-bottom: 3%;
+}
+
+.get-started{
+    padding-left: 9%;
+    padding-right: 15%;
+    padding-top:3%;
+    padding-bottom:3%;
+    background-color: #9861F3;
+    color: white;
+}
+
+.create-account{
+    margin-top: 5px;
+    background-color: rgb(8, 189, 177);
+    border-color: rgb(8, 189, 177);
+}
+
+.create-account:hover{
+    margin-top: 5px;
+    background-color: rgb(3, 128, 119);
+    border-color: rgb(3, 128, 119);
+}

@@ -38,7 +38,7 @@ export class ArtistSignupComponent implements OnInit {
     // To send a GET request, use the concept of URL rewriting to pass data to the backend
     // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
     // To send a POST request, pass data as an object
-    this.http.post<Performer>('http://localhost/WEB_PL/project/performer/performerSignUp.php', params)
+    this.http.post<Performer>('http://localhost/WEB_PL/event-booking-php/performer/performerSignUp.php', params)
       .subscribe((data) => {
         // Receive a response successfully, do something here
         console.log('Response from backend ', data);
