@@ -68,3 +68,18 @@ button
   }
 
 }
+
+.radio-btn{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.divider{
+  width:10px;
+  height:auto;
+  display:inline-block;
+}
+
+#account_type{
+  margin-top: 12px;
+}

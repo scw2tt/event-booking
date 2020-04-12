@@ -7,6 +7,8 @@ export class User {
         public link: string,
         public location: string,
         public name: string,
-        public password: string
+        public password: string,
+        public is_performer: string,
+        public is_venue: string,
     ) { }
 }
