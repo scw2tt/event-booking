@@ -17,10 +17,14 @@ export class ArtistSignupComponent implements OnInit {
   performerModel = new Performer('', '', '', '', '', '', '');
   confirm_msg = '';
   data_submitted = '';
+  email_response = '';
 
   // takes a performer object
   confirmOrder(data: Performer) {
     console.log(data);
+
+
+
     this.confirm_msg = 'Thank you, ' + data.name + '(' + data.name.length + ')';
     this.confirm_msg += '. Now you go out and play the best ' + data.genre + ' music you can!';
   }
@@ -41,8 +45,11 @@ export class ArtistSignupComponent implements OnInit {
     this.http.post<Performer>('http://localhost/WEB_PL/event-booking-php/performer/performerSignUp.php', params)
       .subscribe((data) => {
         // Receive a response successfully, do something here
+        var email = (data["content"][0].email);
         console.log('Response from backend ', data);
+        console.log('Email from backend ', email);
         this.responsedata = data;     // assign response to responsedata property to bind to screen later
+        this.email_response = data["content"][0].email;
       }, (error) => {
         // An error occurs, handle an error in some way
         console.log('Error ', error);

@@ -81,7 +81,10 @@
     </form>
 
     <!--confirmation message-->
-    {{ (confirm_msg.length > 0)? confirm_msg : 'Account Not Yet Created' }}<br />
+    <!--{{ (confirm_msg.length > 0)? confirm_msg : '' }}-->
+    {{ ((email_response.length > 0) && (email_response==="BAD EMAIL"))? 'This email address has already been taken by another user. Please choose a different one.': '' }}
+    {{ ((email_response.length > 0) && !(email_response==="BAD EMAIL"))? 'Thanks for signing up with us! Your account has been created!': '' }}
+    <br />
 
   </div>
 </div>
