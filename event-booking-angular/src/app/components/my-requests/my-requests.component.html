@@ -1,0 +1,57 @@
+<div id="request-select">
+    <!--radio buttons-->
+    <div class="radio-btn">
+        Filter by:
+        <input type="radio" name="reqs" checked="checked" value="requests-to-me"
+            (click)="show_hide('requests-to-me','requests-to-others')" /> Inbox
+        <div class="divider"></div>
+        <input type="radio" name="reqs" value="requests-to-others"
+            (click)="show_hide('requests-to-others','requests-to-me')" /> Sent
+    </div>
+
+    <!--Inbox-->
+    <div id="requests-to-me" class="entry-bundle" style="display:block;">
+        <div class="request-entry">
+            <p>From <b>Wembley Stadium</b> in <b>London, UK</b> on <b>July 7th, 2020 9pm - 11pm</b>
+                This request expires in <b class="expiring">3 Days</b>. <a href="profile">more...</a> </p>
+
+            <button type="button" class="btn btn-success yes-btn">Yes</button>
+            <div class="divider"></div>
+            <button type="button" class="btn btn-danger no-btn">No</button>
+        </div>
+        <div class="request-entry">
+            <p>From <b>Buffalo Wild Wings</b> in <b>Buffalo, NY</b> on <b>July 17th, 2020 5pm - 9pm</b>
+                This request expires in <b class="expiring">12 Days</b>. <a href="profile">more...</a> </p>
+
+            <button type="button" class="btn btn-success yes-btn">Yes</button>
+            <div class="divider"></div>
+            <button type="button" class="btn btn-danger no-btn">No</button>
+        </div>
+    </div>
+
+
+
+    <!--Sent-->
+    <div id="requests-to-others" class="entry-bundle" style="display:none;">
+        <div class="request-entry">
+            <p><b>You</b> to <b>Great American Ranch</b> in <b>Chesterfield, VA</b> on <b>July 30th, 2020 2pm - 3pm</b>
+                This request expires in <b class="expiring">15 Days</b>. <a href="profile">more...</a> </p>
+            <span class="status-cancel">
+                Status: <i>Pending</i>
+                <div class="divider"></div>
+                <div class="divider"></div> <button type="button" class="btn btn-danger cancel-btn">Cancel
+                    Request</button>
+            </span>
+        </div>
+        <div class="request-entry">
+            <p><b>You</b> to <b>Red Rocks Amphitheatre</b> in <b>Denver, CO</b> on <b>November 11th, 2020 6pm - 11pm</b>
+                This request expires in <b class="expiring">34 Days</b>. <a href="profile">more...</a> </p>
+            <span class="status-cancel">
+                Status: <i>Pending</i>
+                <div class="divider"></div>
+                <div class="divider"></div> <button type="button" class="btn btn-danger cancel-btn">Cancel
+                    Request</button>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.navbar-custom{
+    background-color: #9861F3;
+    font-size: 18px;
+}
+
+.navbar-nav > li{
+    padding-left: 20px;
+    padding-right: 20px;
+}
