@@ -1,32 +1,35 @@
-
-
 <div class="back">
 
 
-<div class="contain" align="center">
-  <h1>Sign In</h1>
-  <form>
-    <div class="row">
-      <div class="leftcol">
-        <label for="email">Email</label>
+  <div class="contain" align="center">
+    <h1>Sign In</h1>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+      <div class="row">
+        <div class="leftcol">
+          <label for="email">Email</label>
+        </div>
+        <div class="rightcol">
+          <input type="email" id="email" name="email" placeholder="Email" required #name="ngModel"
+            [(ngModel)]="userModel.email">
+        </div>
       </div>
-      <div class="rightcol">
-        <input type="email" id="email" name="email" placeholder="Email" required>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="leftcol">
-        <label for="pwd">Password</label>
+      <div class="row">
+        <div class="leftcol">
+          <label for="pwd">Password</label>
+        </div>
+        <div class="rightcol">
+          <input type="password" id="passwordd" name="password" placeholder="Password" required #name="ngModel"
+            [(ngModel)]="userModel.password" />
+        </div>
       </div>
-      <div class="rightcol">
-        <input type="password" id="pwd" name="pwd" placeholder="Password" required />
-      </div>
+      <button id="submit" type="submit" (click)="handleLogin(userForm.value)">Login</button>
+    </form>
+    <div class="confirmation">
+      {{ (badEmail && !badPassword)? 'There is currently no account using this email address': '' }}
+      {{ (badPassword)? 'Your password or email is incorrect.': '' }}
     </div>
-      <button id="submit" type="submit">Sign Up</button>
-
-  </form>
-</div>
+  </div>
 </div>
 
 <script type="text/javascript">

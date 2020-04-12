@@ -23,8 +23,6 @@ export class ArtistSignupComponent implements OnInit {
   confirmOrder(data: Performer) {
     console.log(data);
 
-
-
     this.confirm_msg = 'Thank you, ' + data.name + '(' + data.name.length + ')';
     this.confirm_msg += '. Now you go out and play the best ' + data.genre + ' music you can!';
   }
