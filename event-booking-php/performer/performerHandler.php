@@ -113,9 +113,8 @@ function getPerformer_by_email($email)
 	// echo "in getTaskInfo_by_id " . $id ;	
 	$query = "SELECT * FROM performer where email = :email";
 	$statement = $db->prepare($query);
-	$statement->bindValue(':id', $email);
+	$statement->bindValue(':email', $email);
 	$statement->execute();
-	
 	// fetchAll() returns an array for all of the rows in the result set
 	// fetch() return a row
 	$results = $statement->fetchAll();
