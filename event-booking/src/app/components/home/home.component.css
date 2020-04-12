@@ -1,3 +1,4 @@
+/* Sean Wolfe & Emily Mussey */ 
 .title{
     color: white;
 }
@@ -6,7 +7,7 @@
     color: white;
 }
 
-.hero{ 
+.hero{
     background-size: cover;
     background-position: 50% 50%;
     background-image: url('/assets/images/concert-background.jpeg') !important;
