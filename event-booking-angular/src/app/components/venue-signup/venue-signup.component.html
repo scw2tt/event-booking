@@ -19,8 +19,7 @@
 					<label for="capacity">Capacity</label>
 				</div>
 				<div class="rightcol">
-					<input type="number" id="capacity" name="capacity" placeholder="Capacity" required
-						[(ngModel)]="venueModel.capacity">
+					<input type="number" id="capacity" name="capacity" placeholder="Capacity" required>
 				</div>
 			</div>
 
@@ -384,8 +383,7 @@
 					<label for="zip">Zipcode</label>
 				</div>
 				<div class="rightcol">
-					<input type="number" id="zipcode" name="zipcode" placeholder="Zipcode" required
-						[(ngModel)]="venueModel.zipcode">
+					<input type="number" id="zipcode" name="zipcode" placeholder="Zipcode" required>
 				</div>
 			</div>
 
@@ -431,7 +429,8 @@
 						required [(ngModel)]="venueModel.password" />
 				</div>
 			</div>
-			<button id="submit" type="submit" (click)="onClick()">Sign Up</button>
+			<button id="submit" class="btn btn-primary create-account" type="submit" (click)="onClick()">Sign
+				Up</button>
 		</form>
 		<div class="confirmation">
 			{{ ((email_response.length > 0) && (email_response==="BAD EMAIL"))? 'This email address has already been taken by another user. Please choose a different one.': '' }}

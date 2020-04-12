@@ -60,6 +60,19 @@ button
   color:white;
 }
 
+
+.create-account{
+  margin-top: 5px;
+  background-color: rgb(8, 189, 177);
+  border-color: rgb(8, 189, 177);
+}
+
+.create-account:hover{
+  margin-top: 5px;
+  background-color: rgb(3, 128, 119);
+  border-color: rgb(3, 128, 119);
+}
+
 @media screen and (max-width: 650px) {
   .leftcol, .rightcol, textarea, select{
     width: 100%;

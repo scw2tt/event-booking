@@ -83,3 +83,15 @@ button
 #account_type{
   margin-top: 12px;
 }
+
+.create-account{
+  margin-top: 5px;
+  background-color: rgb(8, 189, 177);
+  border-color: rgb(8, 189, 177);
+}
+
+.create-account:hover{
+  margin-top: 5px;
+  background-color: rgb(3, 128, 119);
+  border-color: rgb(3, 128, 119);
+}
