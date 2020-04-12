@@ -12,6 +12,10 @@ h1 {
   color: white;
 }
 
+.confirmation{
+  margin-top: 10px;
+}
+
 button:hover
 {
   border-color: blue;
@@ -19,6 +23,7 @@ button:hover
 }
 
 .back {
+  color: white;
   padding: 25px;
   background-image: url('/assets/images/microphone.jpg') !important;
   background-repeat: no-repeat;
