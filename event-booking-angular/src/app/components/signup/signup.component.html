@@ -16,13 +16,29 @@
 
       <div class="row">
         <div class="leftcol">
-          <label for="pwd">Password</label>
+          <label for="password">Password</label>
         </div>
         <div class="rightcol">
           <input type="password" id="passwordd" name="password" placeholder="Password" required #name="ngModel"
             [(ngModel)]="userModel.password" />
         </div>
       </div>
+
+      <div class="row " id="account_type">
+        <div class="leftcol">
+          Account Type:
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="account_type" value="performer" [(ngModel)]="userModel.is_performer"
+              checked="checked" required />
+            Performer </label>
+          <div class="divider"></div>
+          <label> <input type="radio" name="account_type" value="venue" [(ngModel)]="userModel.is_venue"
+              required />Venue</label>
+        </div>
+      </div>
+
       <button id="submit" type="submit" (click)="handleLogin(userForm.value)">Login</button>
     </form>
     <div class="confirmation">
