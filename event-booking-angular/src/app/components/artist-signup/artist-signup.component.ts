@@ -18,7 +18,8 @@ export class ArtistSignupComponent implements OnInit {
   confirm_msg = '';
   data_submitted = '';
   email_response = '';
-
+  name_response = '';
+  account_created = false;
   // takes a performer object
   confirmOrder(data: Performer) {
     console.log(data);
@@ -44,10 +45,21 @@ export class ArtistSignupComponent implements OnInit {
       .subscribe((data) => {
         // Receive a response successfully, do something here
         var email = (data["content"][0].email);
+        /*
         console.log('Response from backend ', data);
         console.log('Email from backend ', email);
+        */
         this.responsedata = data;     // assign response to responsedata property to bind to screen later
         this.email_response = data["content"][0].email;
+        this.name_response = data["content"][0].name;
+        if ((this.email_response.length > 0) && !(this.email_response === "BAD EMAIL")) {
+          if ((this.name_response.length > 0) && !(this.name_response === "BAD NAME")) {
+            this.account_created = true;
+          }
+        } else {
+          this.account_created = false;
+        }
+
       }, (error) => {
         // An error occurs, handle an error in some way
         console.log('Error ', error);

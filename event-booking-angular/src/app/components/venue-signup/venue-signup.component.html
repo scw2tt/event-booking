@@ -19,7 +19,8 @@
 					<label for="capacity">Capacity</label>
 				</div>
 				<div class="rightcol">
-					<input type="number" id="capacity" name="capacity" placeholder="Capacity" required>
+					<input type="number" id="capacity" name="capacity" placeholder="Capacity" required
+						[(ngModel)]="venueModel.capacity">
 				</div>
 			</div>
 
@@ -380,10 +381,11 @@
 
 			<div class="row">
 				<div class="leftcol">
-					<label for="zip">Zipcode</label>
+					<label for="zipcode">Zipcode</label>
 				</div>
 				<div class="rightcol">
-					<input type="number" id="zipcode" name="zipcode" placeholder="Zipcode" required>
+					<input type="number" id="zipcode" name="zipcode" placeholder="Zipcode" required
+						[(ngModel)]="venueModel.address_line_2">
 				</div>
 			</div>
 
@@ -434,7 +436,8 @@
 		</form>
 		<div class="confirmation">
 			{{ ((email_response.length > 0) && (email_response==="BAD EMAIL"))? 'This email address has already been taken by another user. Please choose a different one.': '' }}
-			{{ ((email_response.length > 0) && !(email_response==="BAD EMAIL"))? 'Thanks for signing up with us! Your account has been created!': '' }}
+			{{ ((name_response === "BAD NAME") && !(email_response==="BAD EMAIL"))? 'This username has already been taken by another user. Please choose a different one.': '' }}
+			{{ (account_created)? 'Thanks for signing up with us! Your account has been created!': '' }}
 		</div>
 
 
