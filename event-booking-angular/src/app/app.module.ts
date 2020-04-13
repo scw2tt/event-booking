@@ -22,6 +22,7 @@ import { ArtistSignupComponent } from './components/artist-signup/artist-signup.
 import { VenueSignupComponent } from './components/venue-signup/venue-signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BookingsComponent } from './components/bookings/bookings.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     ArtistSignupComponent,
     VenueSignupComponent,
+    BookingsComponent,
   ],
   imports: [
     BrowserModule,
