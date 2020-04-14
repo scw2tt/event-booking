@@ -37,33 +37,31 @@ function addTask($task, $due, $priority)
 	
 	$statement->closeCursor();
 }
-
-function addVenue($name, $password, $capacity, $address_line_1, $address_line_2,
-$city, $country, $state, $zipcode, $link, $email, $about_me)
+/*
+addBooking($add_receiver_id, $add_sender_id, 
+$add_sender_is_venue, $add_event_date, $add_expiry_date, 
+$add_status, $add_details);
+*/
+function addBooking($receiver_id, $sender_id, $sender_is_venue, 
+$event_date, $expiry_date, $status, $details)
 {
 	global $db;
 
-	$query = "INSERT INTO venue 
-	(name, password, capacity, address_line_1, address_line_2, 
-	city, country, state, zipcode, link, email, about_me)
+	$query = "INSERT INTO booking (receiver_id, sender_id,  
+	sender_is_venue, event_date, expiry_date, status, details) 
 	VALUES 
-	(:name, :password, :capacity, :address_line_1, :address_line_2, 
-	:city, :country, :state, :zipcode, :link, :email, :about_me)";
-
+	(:receiver_id, :sender_id, :sender_is_venue, :event_date, 
+	:expiry_date, :status, :details)";
+	
 	$statement = $db->prepare($query);
-	$statement->bindValue(':about_me', $about_me);
-	$statement->bindValue(':email', $email);
-	$statement->bindValue(':capacity', $capacity);
-	$statement->bindValue(':link', $link);
-	$statement->bindValue(':address_line_1', $address_line_1);
-	$statement->bindValue(':address_line_2', $address_line_2);
-	$statement->bindValue(':zipcode', $zipcode);
-	$statement->bindValue(':country', $country);
-	$statement->bindValue(':city', $city);
-	$statement->bindValue(':state', $state);
-	$statement->bindValue(':name', $name);
-	$statement->bindValue(':password', $password);	
-
+	$statement->bindValue(':receiver_id', $receiver_id);
+	$statement->bindValue(':sender_id', $sender_id);
+	$statement->bindValue(':sender_is_venue', $sender_is_venue);
+	$statement->bindValue(':event_date', $event_date);
+	$statement->bindValue(':expiry_date', $expiry_date);
+	$statement->bindValue(':status', $status);
+	$statement->bindValue(':details', $details);
+	
 	$status = $statement->execute();
 	$statement->closeCursor();
 }
@@ -115,14 +113,16 @@ function getAllTasks()
 }
 
 
-function getVenue_by_email($email)
+function getPerformer_by_email($email)
 {
 	global $db;
 	// echo "in getTaskInfo_by_id " . $id ;	
-	$query = "SELECT * FROM venue where email = :email";
+	$query = "SELECT * FROM performer where email = :email";
 	$statement = $db->prepare($query);
 	$statement->bindValue(':email', $email);
 	$statement->execute();
+	// fetchAll() returns an array for all of the rows in the result set
+	// fetch() return a row
 	$results = $statement->fetchAll();
 	
 	// closes the cursor and frees the connection to the server so other SQL statements may be issued
@@ -131,11 +131,12 @@ function getVenue_by_email($email)
 	return $results;
 }
 
-function getVenue_by_name($name)
+
+function getPerformer_by_name($name)
 {
 	global $db;
 	// echo "in getTaskInfo_by_id " . $id ;	
-	$query = "SELECT * FROM venue where name = :name";
+	$query = "SELECT * FROM performer where name = :name";
 	$statement = $db->prepare($query);
 	$statement->bindValue(':name', $name);
 	$statement->execute();
@@ -146,6 +147,7 @@ function getVenue_by_name($name)
 
 	return $results;
 }
+
 
 
 function getTaskInfo_by_id($id)

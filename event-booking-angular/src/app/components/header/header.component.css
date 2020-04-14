@@ -7,3 +7,19 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
+#request-booking{
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgb(8, 189, 177);
+    border-color: rgb(8, 189, 177);
+  }
+  
+    #request-booking:hover{
+    background-color: rgb(3, 128, 119);
+    border-color: rgb(3, 128, 119);
+  }

@@ -126,6 +126,21 @@ function getPerformer_by_email($email)
 }
 
 
+function getPerformer_by_name($name)
+{
+	global $db;
+	// echo "in getTaskInfo_by_id " . $id ;	
+	$query = "SELECT * FROM performer where name = :name";
+	$statement = $db->prepare($query);
+	$statement->bindValue(':name', $name);
+	$statement->execute();
+	$results = $statement->fetchAll();
+	
+	// closes the cursor and frees the connection to the server so other SQL statements may be issued
+	$statement->closecursor();
+
+	return $results;
+}
 
 
 

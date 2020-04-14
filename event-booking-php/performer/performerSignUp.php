@@ -35,9 +35,18 @@ foreach ($request as $k => $v)
 
 // Don't add to the website if the email is taken
 $check_email = getPerformer_by_email($data[0]['email']);
+$check_name = getPerformer_by_name($data[0]['name']);
 
-if (count($check_email) === 0){
-
+if (count($check_email) > 0){
+    // if there is already an email taken for that performer, then don't touch it.
+    $data[0]['email'] = 'BAD EMAIL';
+    echo json_encode(['content'=>$data]); // send the data back, but with the altered email
+    exit();
+} elseif(count($check_name) > 0){
+    $data[0]['name'] = 'BAD NAME';
+    echo json_encode(['content'=>$data]); // send the data back, but with the altered email
+    exit();
+} else {
     // Send response (in json format) back the front end
     echo json_encode(['content'=>$data]);
     $add_about_me = $data[0]['about_me'];
@@ -50,10 +59,6 @@ if (count($check_email) === 0){
     addPerformer($add_about_me, $add_email, $add_genre,
     $add_link, $add_location, $add_name, $add_password);
 
-} else {
-    // if there is already an email taken for that performer, then don't touch it.
-    $data[0]['email'] = 'BAD EMAIL';
-    echo json_encode(['content'=>$data]); // send the data back, but with the altered email
 }
 
 

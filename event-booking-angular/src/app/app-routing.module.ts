@@ -6,6 +6,7 @@ import { ArtistSignupComponent } from './components/artist-signup/artist-signup.
 import { VenueSignupComponent } from './components/venue-signup/venue-signup.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
+import { CreateBookingComponent } from './components/create-booking/create-booking.component';
 import { componentFactoryName } from '@angular/compiler';
 
 
@@ -43,6 +44,12 @@ const routes: Routes = [
     path: 'bookings',
     pathMatch: 'full',
     component: BookingsComponent
+  },
+
+  {
+    path: 'create-booking',
+    pathMatch: 'full',
+    component: CreateBookingComponent
   }
 
 ];

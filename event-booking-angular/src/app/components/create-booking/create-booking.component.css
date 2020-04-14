@@ -1,0 +1,82 @@
+.confirmation{
+    margin-top: 10px;
+    color: white;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    color: white;
+  }
+  
+  h1,p {
+    color: white;
+  }
+  
+  .back {
+    padding: 25px;
+    background-image: url('/assets/images/dj.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .contain {
+    background-color: #9861F3;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  button
+  {
+    margin-top: 10px;
+    width: 25%;
+  }
+  
+  button:hover
+  {
+    border-color: blue;
+    border-radius: 2px;
+  }
+  
+  .leftcol {
+    width: 25%;
+  }
+  
+  .rightcol {
+    width: 75%;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .leftcol, .rightcol, textarea {
+      width: 100%;
+      margin-top: 0;
+    }
+  
+    button{
+      width: 100%;
+    }
+    .contain {
+      width: 100%;
+    }
+  
+  }
+  
+  .create-account{
+    margin-top: 5px;
+    background-color: rgb(8, 189, 177);
+    border-color: rgb(8, 189, 177);
+  }
+  
+  .create-account:hover{
+    margin-top: 5px;
+    background-color: rgb(3, 128, 119);
+    border-color: rgb(3, 128, 119);
+  }
