@@ -84,7 +84,8 @@
     <!--confirmation message-->
     <div class="confirmation">
       {{ ((email_response.length > 0) && (email_response==="BAD EMAIL"))? 'This email address has already been taken by another user. Please choose a different one.': '' }}
-      {{ ((email_response.length > 0) && !(email_response==="BAD EMAIL"))? 'Thanks for signing up with us! Your account has been created!': '' }}
+      {{ ((name_response === "BAD NAME") && !(email_response==="BAD EMAIL"))? 'This username has already been taken by another user. Please choose a different one.': '' }}
+      {{ (account_created)? 'Thanks for signing up with us! Your account has been created!': '' }}
     </div>
     <br />
 
