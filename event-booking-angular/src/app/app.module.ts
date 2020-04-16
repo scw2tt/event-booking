@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { CreateBookingComponent } from './components/create-booking/create-booking.component';
+import { EditprofileComponent } from './components/editprofile/editprofile.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { CreateBookingComponent } from './components/create-booking/create-booki
     VenueSignupComponent,
     BookingsComponent,
     CreateBookingComponent,
+    EditprofileComponent,
   ],
   imports: [
     BrowserModule,

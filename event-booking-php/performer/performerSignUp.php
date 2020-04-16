@@ -2,9 +2,12 @@
 require('connectdb.php');
 require('performerHandler.php');
 
-header('Access-Control-Allow-Origin: http://localhost:4200');
+
+header('Access-Control-Allow-Origin: *');
 // try to allow all
 //header('Access-Control-Allow-Origin: *');
+//header('Access-Control-Allow-Origin: http://localhost:4200');
+
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
 header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
@@ -12,10 +15,10 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 
 // get the size of incoming data
 $content_length = (int) $_SERVER['CONTENT_LENGTH'];
-
+//echo "hello";
 // retrieve data from the request
 $postdata = file_get_contents("php://input");
-
+//echo $postdata;
 // Process data
 // (this example simply extracts the data and restructures them back)
 
@@ -52,10 +55,13 @@ if (count($check_email) > 0){
     $add_location = $data[0]['location'];
     $add_name = $data[0]['name'];
     $add_password = $data[0]['password'];
-    addPerformer($add_about_me, $add_email, $add_genre, 
+
+// hash password so it is not in plaintext in DB
+    $add_password = MD5($add_password);
+    addPerformer($add_about_me, $add_email, $add_genre,
     $add_link, $add_location, $add_name, $add_password);
 
-} 
+}
 
 
 ?>

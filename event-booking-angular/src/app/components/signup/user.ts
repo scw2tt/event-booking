@@ -10,5 +10,6 @@ export class User {
         public password: string,
         public is_performer: string,
         public is_venue: string,
+        public cap: number,
     ) { }
 }

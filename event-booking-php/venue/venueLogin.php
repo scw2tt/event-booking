@@ -2,7 +2,7 @@
     require('connectdb.php');
     require('venueHandler.php');
 
-    header('Access-Control-Allow-Origin: http://localhost:4200');
+    header('Access-Control-Allow-Origin: *');
     // try to allow all
     //header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
@@ -11,6 +11,12 @@
 
     // enable the global session array
     session_start();
+
+    if(isset($_SESSION['myID']))
+    {
+      session_destroy();
+      exit();
+    }
 
     // get the user and password from front end login submission
     $content_length = (int) $_SERVER['CONTENT_LENGTH'];
@@ -23,11 +29,12 @@
       $data[0][''.$k] = $v;
     }
     $email = $data[0]['email'];
+    echo $email;
     $password = $data[0]['password'];
 
     // get the password for this email from the database
     $check_email = getVenue_by_email($email);
-    // if the email is not there at all, then 
+    // if the email is not there at all, then
     if (count($check_email) == 0){
         $data[0]['email'] = 'BAD EMAIL';
         echo json_encode(['content'=>$data]);
@@ -36,7 +43,11 @@
     $password_from_db = $check_email[0]['password'];
 
     // check to make sure that the passwords exist
-    if ($password_from_db === $password){
+    if ($password_from_db === MD5($password)){
+
+        $_SESSION['venue'] = "venue";
+        $_SESSION['myID'] = $check_email[0]['venue_id'];
+
         // give them the entire object
         echo json_encode(['content'=>$check_email]);
     } else {

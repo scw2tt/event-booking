@@ -32,7 +32,7 @@ $check_email = getVenue_by_email($data[0]['email']);
 $check_name = getVenue_by_name($data[0]['name']);
 
 
-if (count($check_email) > 0){ 
+if (count($check_email) > 0){
     // if there is already an email taken for that performer, then don't touch it.
     $data[0]['email'] = 'BAD EMAIL';
     echo json_encode(['content'=>$data]); // send the data back, but with the altered email
@@ -43,7 +43,7 @@ if (count($check_email) > 0){
     $data[0]['name'] = 'BAD NAME';
     echo json_encode(['content'=>$data]); // send the data back, but with the altered email
     exit();
-} 
+}
 else {
 
   echo json_encode(['content'=>$data]);
@@ -59,11 +59,17 @@ else {
   $add_link = $data[0]['link'];
   $add_email = $data[0]['email'];
   $add_about_me = $data[0]['about_me'];
-  
-  addVenue($add_name, $add_password, $add_capacity, $add_address_line_1, 
+
+  // hash password so it is not in plaintext in DB
+
+  $add_password = MD5($add_password);
+
+  addVenue($add_name, $add_password, $add_capacity, $add_address_line_1,
   $add_address_line_2, $add_city, $add_country, $add_state, $add_zipcode,
   $add_link, $add_email, $add_about_me);
-  
+
+
+
 }
 
 

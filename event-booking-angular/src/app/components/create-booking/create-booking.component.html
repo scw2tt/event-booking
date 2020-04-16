@@ -33,7 +33,7 @@
                     <label for="name">Event Date:</label>
                 </div>
                 <div class="rightcol">
-                    <input type="datetime-local" id="event_date" name="event_date"
+                    <input type="date" id="event_date" name="event_date"
                         placeholder="When will this event occur?" autofocus required
                         [(ngModel)]="bookingrequestModel.event_date" required />
                 </div>
@@ -44,7 +44,7 @@
                     <label for="name">Request Expiration Date:</label>
                 </div>
                 <div class="rightcol">
-                    <input type="datetime-local" id="expiry_date" name="expiry_date"
+                    <input type="date" id="expiry_date" name="expiry_date"
                         placeholder="When does this request expire?" autofocus required
                         [(ngModel)]="bookingrequestModel.expiry_date" />
                 </div>
