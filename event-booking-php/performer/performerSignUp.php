@@ -1,5 +1,4 @@
 <?php
-echo "test";
 require('connectdb.php');
 require('performerHandler.php');
 
@@ -16,10 +15,10 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 
 // get the size of incoming data
 $content_length = (int) $_SERVER['CONTENT_LENGTH'];
-echo "hello";
+//echo "hello";
 // retrieve data from the request
 $postdata = file_get_contents("php://input");
-echo $postdata;
+//echo $postdata;
 // Process data
 // (this example simply extracts the data and restructures them back)
 
@@ -56,6 +55,9 @@ if (count($check_email) > 0){
     $add_location = $data[0]['location'];
     $add_name = $data[0]['name'];
     $add_password = $data[0]['password'];
+
+// hash password so it is not in plaintext in DB
+    $add_password = MD5($add_password);
     addPerformer($add_about_me, $add_email, $add_genre,
     $add_link, $add_location, $add_name, $add_password);
 

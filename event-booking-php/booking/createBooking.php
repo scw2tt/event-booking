@@ -3,7 +3,7 @@ require('connectdb.php');
 require('bookingHandler.php');
 
 
-header('Access-Control-Allow-Origin: http://localhost:4200');
+header('Access-Control-Allow-Origin: *');
 // try to allow all
 //header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
@@ -34,10 +34,24 @@ if (count($check_receiver) === 0){
     exit();
 }
 
+if (strlen($data[0]['event_date']) > 10)
+{
+  $data[0]['receiver'] = 'NO EVENT DATE';
+  echo json_encode(['content'=>$data]);
+  exit();
+}
+
+if (strlen($data[0]['expiry_date']) > 10)
+{
+  $data[0]['receiver'] = 'NO EXPIRY DATE';
+  echo json_encode(['content'=>$data]);
+  exit();
+}
+
 // get the id of the sender
 $receiver_id = $check_receiver[0]['performer_id'];
 $sender_id = 6;
-$sender_is_venue = 'venue';
+$sender_is_venue = "venue";//$_SESSION["venue"];
 $status = 'live';
 
 
@@ -52,8 +66,8 @@ $add_expiry_date = $data[0]['expiry_date'];
 $add_status = $status;
 $add_details = $data[0]['details'];
 
-addBooking($add_receiver_id, $add_sender_id, 
-$add_sender_is_venue, $add_event_date, $add_expiry_date, 
+addBooking($add_receiver_id, $add_sender_id,
+$add_sender_is_venue, $add_event_date, $add_expiry_date,
 $add_status, $add_details);
 
 

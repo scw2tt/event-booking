@@ -16,9 +16,20 @@ export class HomeComponent implements OnInit {
 
 // Hardcoded Arrow Function
 
+
+
     var hello;
-    hello = val => "Welcome to Eventz,  " + val + "!";
-    document.getElementById("intro").innerHTML = hello("Johnny Cash");
+    hello = val => "Welcome to Eventz  " + val + "!";
+
+    /*if(isset($_SESSION['names']))
+    {
+      document.getElementById("intro").innerHTML = hello($_SESSION['names']);
+    }*/
+
+//    else{
+      document.getElementById("intro").innerHTML = hello("");
+  //  }
+
   }
 
 }

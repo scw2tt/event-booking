@@ -2,7 +2,7 @@
     require('connectdb.php');
     require('performerHandler.php');
 
-    header('Access-Control-Allow-Origin: http://localhost:4200');
+    header('Access-Control-Allow-Origin: *');
     // try to allow all
     //header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
@@ -27,7 +27,7 @@
 
     // get the password for this email from the database
     $check_email = getPerformer_by_email($email);
-    // if the email is not there at all, then 
+    // if the email is not there at all, then
     if (count($check_email) == 0){
         $data[0]['email'] = 'BAD EMAIL';
         echo json_encode(['content'=>$data]);
@@ -36,10 +36,16 @@
     $password_from_db = $check_email[0]['password'];
 
     // check to make sure that the passwords exist
-    if ($password_from_db === $password){
+    if ($password_from_db === MD5($password)){
         // give them the entire object
+        $_SESSION['venue'] = "performer";
+        //$_SESSION['email'] = $email;
+        //$_SESSION['names'] = $check_email[0]['name'];
+        //$_SESSION['valid'] = TRUE;
         echo json_encode(['content'=>$check_email]);
-    } else {
+        exit();
+    }
+      else {
         // respond to front end that it didn't work
         $data[0]['password'] = 'BAD PASSWORD';
         echo json_encode(['content'=>$data]);

@@ -41,6 +41,7 @@
         (click)="handleLogin(userForm.value)">Login</button>
     </form>
     <div class="confirmation">
+      {{ (empty)? 'Please enter your email and password': ''}}
       {{ (badEmail && !badPassword)? 'There is currently no account using this email address': '' }}
       {{ (badPassword)? 'Your password, email, or selected account type is incorrect.': '' }}
     </div>
