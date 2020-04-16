@@ -70,6 +70,39 @@ $city, $country, $state, $zipcode, $link, $email, $about_me)
 	$statement->closeCursor();
 }
 
+
+function editVenue($name, $password, $capacity, $address_line_1, $address_line_2,
+$city, $country, $state, $zipcode, $link, $email, $about_me)
+{
+	global $db;
+
+
+	$query = "UPDATE venue SET about_me = :about_me, genre = :genre,
+		link = :link, password = :password, capacity = :capacity,
+		address_line_1 = :address_line_1, address_line_2 = :address_line_2, city = :city,
+		country = :country, state = :state, zipcode = :zipcode,
+	  where email= :email";
+
+
+
+	$statement = $db->prepare($query);
+	$statement->bindValue(':about_me', $about_me);
+	$statement->bindValue(':email', $email);
+	$statement->bindValue(':capacity', $capacity);
+	$statement->bindValue(':link', $link);
+	$statement->bindValue(':address_line_1', $address_line_1);
+	$statement->bindValue(':address_line_2', $address_line_2);
+	$statement->bindValue(':zipcode', $zipcode);
+	$statement->bindValue(':country', $country);
+	$statement->bindValue(':city', $city);
+	$statement->bindValue(':state', $state);
+	$statement->bindValue(':name', $name);
+	$statement->bindValue(':password', $password);
+	//echo $query;
+	$status = $statement->execute();
+	$statement->closeCursor();
+}
+
 function updateTaskInfo($task, $due, $priority, $id)
 {
 	global $db;

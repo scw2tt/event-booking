@@ -57,7 +57,7 @@ else {
 //$holdven = $_SESSION["venue"];
 // get the id of the sender
 $receiver_id = $check_receiver[0]['performer_id'];
-$sender_id = 2;//$_SESSION["myID"];
+$sender_id = $_SESSION["myID"];
 $sender_is_venue = "venue";
 $status = 'live';
 

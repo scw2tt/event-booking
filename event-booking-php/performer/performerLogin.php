@@ -12,11 +12,11 @@
     // enable the global session array
     session_start();
 
-    if(isset($_SESSION['myID']))
+    /*if(isset($_SESSION['myID']))
     {
       session_destroy();
       exit();
-    }
+    }*/
 
     // get the user and password from front end login submission
     $content_length = (int) $_SERVER['CONTENT_LENGTH'];

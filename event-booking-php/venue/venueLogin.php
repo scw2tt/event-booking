@@ -29,6 +29,7 @@
       $data[0][''.$k] = $v;
     }
     $email = $data[0]['email'];
+    echo $email;
     $password = $data[0]['password'];
 
     // get the password for this email from the database

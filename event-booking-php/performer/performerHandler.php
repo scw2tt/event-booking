@@ -62,6 +62,28 @@ $name, $password)
 	$statement->closeCursor();
 }
 
+function editPerformer($about_me, $email, $genre, $link, $location,
+$name, $password)
+{
+	global $db;
+
+	$query = "UPDATE performer SET about_me = :about_me, genre = :genre,
+		link = :link, location= :location, password = :password
+	  where email= :email";
+
+	$password = MD5($password);
+	$statement = $db->prepare($query);
+	$statement->bindValue(':about_me', $about_me);
+	$statement->bindValue(':email', $email);
+	$statement->bindValue(':genre', $genre);
+	$statement->bindValue(':link', $link);
+	$statement->bindValue(':location', $location);
+	$statement->bindValue(':password', $password);
+
+	$status = $statement->execute();
+	$statement->closeCursor();
+}
+
 function updateTaskInfo($task, $due, $priority, $id)
 {
 	global $db;
