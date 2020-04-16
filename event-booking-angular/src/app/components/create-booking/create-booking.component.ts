@@ -47,6 +47,13 @@ export class CreateBookingComponent implements OnInit {
         else if (curr_name === "NO EXPIRY DATE"){
           this.response_msg = 'Please enter the expiration date of this request.';
         }
+        else if (curr_name === "VENUE ERR"){
+          this.response_msg = 'Venues can only send requests to artists.';
+
+        }
+        else if (curr_name === "ARTIST ERR"){
+          this.response_msg = 'Artists can only send requests to venues.';
+        }
         else {
           this.response_msg = 'Your request to ' + curr_name + ' has been sent!';
         }

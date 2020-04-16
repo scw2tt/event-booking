@@ -173,4 +173,15 @@ function getTaskInfo_by_id($id)
 	return $results;
 }
 
+
+function acceptBooking()
+{
+
+}
+
+function rejectBooking()
+{
+	
+}
+
 ?>

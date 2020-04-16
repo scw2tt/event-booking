@@ -10,6 +10,8 @@ header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Au
 header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT');
 session_start();
+
+
 // get the size of incoming data
 $content_length = (int) $_SERVER['CONTENT_LENGTH'];
 
@@ -26,39 +28,11 @@ foreach ($request as $k => $v)
     $data[0][''.$k] = $v;
 }
 
-// see if the receiver is a real user, then get the id
-$check_receiver = getPerformer_by_name($data[0]['receiver']);
-if (count($check_receiver) === 0){
-    $data[0]['receiver'] = 'BAD NAME';
-    echo json_encode(['content'=>$data]);
-    exit();
-}
 
-if (strlen($data[0]['event_date']) > 10)
-{
-  $data[0]['receiver'] = 'NO EVENT DATE';
-  echo json_encode(['content'=>$data]);
-  exit();
-}
-
-if (strlen($data[0]['expiry_date']) > 10)
-{
-  $data[0]['receiver'] = 'NO EXPIRY DATE';
-  echo json_encode(['content'=>$data]);
-  exit();
-}
-
-/*if($_SESSION["venue"] === "venue")
-  $holdven = "venue";
-else {
-  $holdven = "performer";
-}*/
-
-//$holdven = $_SESSION["venue"];
 // get the id of the sender
 $receiver_id = $check_receiver[0]['performer_id'];
-$sender_id = 2;//$_SESSION["myID"];
-$sender_is_venue = "venue";
+$sender_id = $_SESSION["myID"];
+$sender_is_venue = $_SESSION["venue"];
 $status = 'live';
 
 

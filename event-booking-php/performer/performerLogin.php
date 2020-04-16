@@ -12,6 +12,12 @@
     // enable the global session array
     session_start();
 
+    if(isset($_SESSION['myID']))
+    {
+      session_destroy();
+      exit();
+    }
+
     // get the user and password from front end login submission
     $content_length = (int) $_SERVER['CONTENT_LENGTH'];
     $postdata = file_get_contents("php://input");
@@ -39,6 +45,7 @@
     if ($password_from_db === MD5($password)){
         // give them the entire object
         $_SESSION['venue'] = "performer";
+        $_SESSION['myID'] = $check_email[0]['performer_id'];
         //$_SESSION['email'] = $email;
         //$_SESSION['names'] = $check_email[0]['name'];
         //$_SESSION['valid'] = TRUE;
