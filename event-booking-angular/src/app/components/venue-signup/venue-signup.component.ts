@@ -74,7 +74,7 @@ export class VenueSignupComponent implements OnInit {
     // To send a GET request, use the concept of URL rewriting to pass data to the backend
     // this.http.get<Order>('http://localhost/cs4640/inclass11/ngphp-get.php?str='+params)
     // To send a POST request, pass data as an object
-    this.http.post<Venue>('http://localhost:80/sessions/WEB_PL/event-booking-php/venue/venueSignUp.php', params)
+    this.http.post<Venue>('http://localhost/WEB_PL/event-booking-php/venue/venueSignUp.php', params)
       .subscribe((data) => {
         // Receive a response successfully, do something here
         var email = (data["content"][0].email);
