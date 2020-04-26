@@ -10,7 +10,8 @@
         </div>
         <div class="rightcol">
           <input type="text" id="name" name="name" placeholder="Artist Name" autofocus required #name="ngModel"
-            [(ngModel)]="performerModel.name" />
+            [(ngModel)]="performerModel.name" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}" />
         </div>
       </div>
 
@@ -20,7 +21,8 @@
         </div>
         <div class="rightcol">
           <input type="text" id="genre" name="genre" placeholder="Genre" required #name="ngModel"
-            [(ngModel)]="performerModel.genre" />
+            [(ngModel)]="performerModel.genre" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}" />
         </div>
       </div>
 
@@ -30,7 +32,8 @@
         </div>
         <div class="rightcol">
           <input type="text" id="location" name="location" placeholder="Location" required #name="ngModel"
-            [(ngModel)]="performerModel.location" />
+            [(ngModel)]="performerModel.location" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}" />
         </div>
       </div>
 
@@ -41,7 +44,8 @@
         </div>
         <div class="rightcol">
           <input type="text" id="link" name="link" placeholder="Website, social media site, etc." #name="ngModel"
-            [(ngModel)]="performerModel.link" />
+            [(ngModel)]="performerModel.link" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}" />
         </div>
       </div>
 
@@ -51,7 +55,8 @@
         </div>
         <div class="rightcol">
           <input type="email" id="email" name="email" placeholder="Email" required #name="ngModel"
-            [(ngModel)]="performerModel.email" />
+            [(ngModel)]="performerModel.email" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}" />
         </div>
       </div>
 
@@ -62,7 +67,8 @@
         </div>
         <div class="rightcol">
           <textarea id="about" name="about_me" placeholder="About" rows="4" cols="80" #name="ngModel"
-            [(ngModel)]="performerModel.about_me"></textarea>
+            [(ngModel)]="performerModel.about_me" [ngStyle]="{'color': account_created ? 'green': 'black', 
+            'font-weight': account_created ? 'bold': 'normal'}"></textarea>
         </div>
       </div>
 
@@ -87,6 +93,9 @@
       {{ ((name_response === "BAD NAME") && !(email_response==="BAD EMAIL"))? 'This username has already been taken by another user. Please choose a different one.': '' }}
       {{ (account_created)? 'Thanks for signing up with us! Your account has been created! Please login! ': '' }}
     </div>
+
+
+
     <br />
 
   </div>
