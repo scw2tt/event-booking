@@ -41,7 +41,7 @@
                     <p><i>Performer</i></p>
                     <p>Genre: <b> {{ genre }}</b></p>
                     <p>Area: <b> {{ location }}</b></p>
-                    <p>Link: <b><a href="{{ link }}"> {{ link }} </a></b></p>
+                    <div *ngIf=" haslink ">  <p>Link: <b><a href="{{ link }}"> {{ link }} </a></b></p></div>
                     <p>Contact: <b> {{ email }}</b></p>
                 </div>
 

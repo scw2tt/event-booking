@@ -53,11 +53,11 @@ export class SignupComponent implements OnInit {
     // convert the form data to a JSON
     let params = JSON.stringify(form);
 
-    let php_script_url = 'http://localhost/WEB_PL/event-booking-php/performer/performerLogin.php';
+    let php_script_url = 'http://localhost/sessions/WEB_PL/event-booking-php/performer/performerLogin.php';
 
     if (form['account_type'] === 'venue') {
 
-      php_script_url = 'http://localhost/WEB_PL/event-booking-php/venue/venueLogin.php';
+      php_script_url = 'http://localhost/sessions/WEB_PL/event-booking-php/venue/venueLogin.php';
     }
 
     if (form['passwordd'] == '' || form['email'] == '')

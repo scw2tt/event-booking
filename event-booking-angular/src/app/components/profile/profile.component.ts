@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   link = "";
   email = "";
   about = "";
+  haslink = false;
 
 
   ngOnInit(): void {
@@ -31,6 +32,8 @@ export class ProfileComponent implements OnInit {
     this. genre = this.hold.genre;
     this.location = this.hold.location;
     this.link = this.hold.link;
+    if(this.link!=="")
+      this.haslink= true;
     this.email = this.hold.email;
     this.about = this.hold.about_me;
     //if(localStorage.getItem("used") === null)
